@@ -13,6 +13,13 @@
 		05CD02D42B5F8E7200273722 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05CD02D22B5F8E7200273722 /* Main.storyboard */; };
 		05CD02D62B5F8E7400273722 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05CD02D52B5F8E7400273722 /* Assets.xcassets */; };
 		05CD02D92B5F8E7400273722 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05CD02D72B5F8E7400273722 /* LaunchScreen.storyboard */; };
+		05CD02E12B5F8EA700273722 /* CalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05CD02E02B5F8EA700273722 /* CalendarView.xib */; };
+		05CD02E32B5F8F3200273722 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CD02E22B5F8F3200273722 /* CalendarView.swift */; };
+		05CD02E82B5F98A900273722 /* CalendarDaysCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CD02E62B5F98A900273722 /* CalendarDaysCollectionViewCell.swift */; };
+		05CD02E92B5F98A900273722 /* CalendarDaysCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05CD02E72B5F98A900273722 /* CalendarDaysCollectionViewCell.xib */; };
+		05CD02EC2B5FA06000273722 /* HorizDayFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CD02EB2B5FA06000273722 /* HorizDayFlowLayout.swift */; };
+		05CD02EF2B5FA13600273722 /* CalendarDataSourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CD02EE2B5FA13600273722 /* CalendarDataSourceModel.swift */; };
+		05CD02F22B5FA1E700273722 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CD02F12B5FA1E700273722 /* CalendarViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +31,13 @@
 		05CD02D52B5F8E7400273722 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05CD02D82B5F8E7400273722 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05CD02DA2B5F8E7400273722 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05CD02E02B5F8EA700273722 /* CalendarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarView.xib; sourceTree = "<group>"; };
+		05CD02E22B5F8F3200273722 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		05CD02E62B5F98A900273722 /* CalendarDaysCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDaysCollectionViewCell.swift; sourceTree = "<group>"; };
+		05CD02E72B5F98A900273722 /* CalendarDaysCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarDaysCollectionViewCell.xib; sourceTree = "<group>"; };
+		05CD02EB2B5FA06000273722 /* HorizDayFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizDayFlowLayout.swift; sourceTree = "<group>"; };
+		05CD02EE2B5FA13600273722 /* CalendarDataSourceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDataSourceModel.swift; sourceTree = "<group>"; };
+		05CD02F12B5FA1E700273722 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +70,7 @@
 		05CD02CB2B5F8E7200273722 /* horizCalendarView */ = {
 			isa = PBXGroup;
 			children = (
+				05CD02E42B5F987A00273722 /* CalendarView */,
 				05CD02CC2B5F8E7200273722 /* AppDelegate.swift */,
 				05CD02CE2B5F8E7200273722 /* SceneDelegate.swift */,
 				05CD02D02B5F8E7200273722 /* ViewController.swift */,
@@ -65,6 +80,52 @@
 				05CD02DA2B5F8E7400273722 /* Info.plist */,
 			);
 			path = horizCalendarView;
+			sourceTree = "<group>";
+		};
+		05CD02E42B5F987A00273722 /* CalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				05CD02F02B5FA1BD00273722 /* ViewModel */,
+				05CD02ED2B5FA10D00273722 /* Model */,
+				05CD02EA2B5FA04400273722 /* FlowLayout */,
+				05CD02E52B5F988800273722 /* DayCell */,
+				05CD02E02B5F8EA700273722 /* CalendarView.xib */,
+				05CD02E22B5F8F3200273722 /* CalendarView.swift */,
+			);
+			path = CalendarView;
+			sourceTree = "<group>";
+		};
+		05CD02E52B5F988800273722 /* DayCell */ = {
+			isa = PBXGroup;
+			children = (
+				05CD02E62B5F98A900273722 /* CalendarDaysCollectionViewCell.swift */,
+				05CD02E72B5F98A900273722 /* CalendarDaysCollectionViewCell.xib */,
+			);
+			path = DayCell;
+			sourceTree = "<group>";
+		};
+		05CD02EA2B5FA04400273722 /* FlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				05CD02EB2B5FA06000273722 /* HorizDayFlowLayout.swift */,
+			);
+			path = FlowLayout;
+			sourceTree = "<group>";
+		};
+		05CD02ED2B5FA10D00273722 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				05CD02EE2B5FA13600273722 /* CalendarDataSourceModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		05CD02F02B5FA1BD00273722 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				05CD02F12B5FA1E700273722 /* CalendarViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +188,8 @@
 			files = (
 				05CD02D92B5F8E7400273722 /* LaunchScreen.storyboard in Resources */,
 				05CD02D62B5F8E7400273722 /* Assets.xcassets in Resources */,
+				05CD02E12B5F8EA700273722 /* CalendarView.xib in Resources */,
+				05CD02E92B5F98A900273722 /* CalendarDaysCollectionViewCell.xib in Resources */,
 				05CD02D42B5F8E7200273722 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,9 +201,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05CD02F22B5FA1E700273722 /* CalendarViewModel.swift in Sources */,
 				05CD02D12B5F8E7200273722 /* ViewController.swift in Sources */,
 				05CD02CD2B5F8E7200273722 /* AppDelegate.swift in Sources */,
+				05CD02E82B5F98A900273722 /* CalendarDaysCollectionViewCell.swift in Sources */,
+				05CD02E32B5F8F3200273722 /* CalendarView.swift in Sources */,
 				05CD02CF2B5F8E7200273722 /* SceneDelegate.swift in Sources */,
+				05CD02EF2B5FA13600273722 /* CalendarDataSourceModel.swift in Sources */,
+				05CD02EC2B5FA06000273722 /* HorizDayFlowLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
