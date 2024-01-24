@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05B49B1E2B60E7640019DB17 /* HorizMonthFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B49B1D2B60E7640019DB17 /* HorizMonthFlowLayout.swift */; };
 		05CD02CD2B5F8E7200273722 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CD02CC2B5F8E7200273722 /* AppDelegate.swift */; };
 		05CD02CF2B5F8E7200273722 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CD02CE2B5F8E7200273722 /* SceneDelegate.swift */; };
 		05CD02D12B5F8E7200273722 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CD02D02B5F8E7200273722 /* ViewController.swift */; };
@@ -20,9 +21,11 @@
 		05CD02EC2B5FA06000273722 /* HorizDayFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CD02EB2B5FA06000273722 /* HorizDayFlowLayout.swift */; };
 		05CD02EF2B5FA13600273722 /* CalendarDataSourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CD02EE2B5FA13600273722 /* CalendarDataSourceModel.swift */; };
 		05CD02F22B5FA1E700273722 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CD02F12B5FA1E700273722 /* CalendarViewModel.swift */; };
+		05CD02F42B60E27700273722 /* CalendarMonthCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CD02F32B60E27700273722 /* CalendarMonthCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05B49B1D2B60E7640019DB17 /* HorizMonthFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizMonthFlowLayout.swift; sourceTree = "<group>"; };
 		05CD02C92B5F8E7200273722 /* horizCalendarView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = horizCalendarView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05CD02CC2B5F8E7200273722 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05CD02CE2B5F8E7200273722 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +41,7 @@
 		05CD02EB2B5FA06000273722 /* HorizDayFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizDayFlowLayout.swift; sourceTree = "<group>"; };
 		05CD02EE2B5FA13600273722 /* CalendarDataSourceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDataSourceModel.swift; sourceTree = "<group>"; };
 		05CD02F12B5FA1E700273722 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		05CD02F32B60E27700273722 /* CalendarMonthCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarMonthCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,26 +92,28 @@
 				05CD02F02B5FA1BD00273722 /* ViewModel */,
 				05CD02ED2B5FA10D00273722 /* Model */,
 				05CD02EA2B5FA04400273722 /* FlowLayout */,
-				05CD02E52B5F988800273722 /* DayCell */,
+				05CD02E52B5F988800273722 /* Cell */,
 				05CD02E02B5F8EA700273722 /* CalendarView.xib */,
 				05CD02E22B5F8F3200273722 /* CalendarView.swift */,
 			);
 			path = CalendarView;
 			sourceTree = "<group>";
 		};
-		05CD02E52B5F988800273722 /* DayCell */ = {
+		05CD02E52B5F988800273722 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				05CD02E62B5F98A900273722 /* CalendarDaysCollectionViewCell.swift */,
 				05CD02E72B5F98A900273722 /* CalendarDaysCollectionViewCell.xib */,
+				05CD02F32B60E27700273722 /* CalendarMonthCollectionViewCell.swift */,
 			);
-			path = DayCell;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		05CD02EA2B5FA04400273722 /* FlowLayout */ = {
 			isa = PBXGroup;
 			children = (
 				05CD02EB2B5FA06000273722 /* HorizDayFlowLayout.swift */,
+				05B49B1D2B60E7640019DB17 /* HorizMonthFlowLayout.swift */,
 			);
 			path = FlowLayout;
 			sourceTree = "<group>";
@@ -206,7 +212,9 @@
 				05CD02CD2B5F8E7200273722 /* AppDelegate.swift in Sources */,
 				05CD02E82B5F98A900273722 /* CalendarDaysCollectionViewCell.swift in Sources */,
 				05CD02E32B5F8F3200273722 /* CalendarView.swift in Sources */,
+				05CD02F42B60E27700273722 /* CalendarMonthCollectionViewCell.swift in Sources */,
 				05CD02CF2B5F8E7200273722 /* SceneDelegate.swift in Sources */,
+				05B49B1E2B60E7640019DB17 /* HorizMonthFlowLayout.swift in Sources */,
 				05CD02EF2B5FA13600273722 /* CalendarDataSourceModel.swift in Sources */,
 				05CD02EC2B5FA06000273722 /* HorizDayFlowLayout.swift in Sources */,
 			);

@@ -77,17 +77,23 @@ class CalendarView: CustomXibView {
     override func setBasicValue() {
         calendarViewModel.calendarModel = CalendarDataSourceModel(year: calendarViewModel.calendar.component(.year, from: Date()),
                                                                   totalMonth: 6)
-//        monthCollectionView.delegate = self
-//        monthCollectionView.dataSource = self
-        // 註冊 cell
-//        monthCollectionView.re
+        monthCollectionView.delegate = self
+        monthCollectionView.dataSource = self
+        monthCollectionView.register(CalendarMonthCollectionViewCell.self,
+                                     forCellWithReuseIdentifier: CalendarMonthCollectionViewCell.identifier)
+        setupMonthCollectionViewLayout()
         
         daysCollectionView.delegate = self
         daysCollectionView.dataSource = self
         daysCollectionView.registerCellWithNib(identifier: CalendarDaysCollectionViewCell.identifier, bundle: nil)
         setupDaysCollectionViewLayout()
     }
-    
+    private func setupMonthCollectionViewLayout() {
+        let layout = HorizMonthFlowLayout()
+        layout.scrollDirection = .horizontal
+        monthCollectionView.collectionViewLayout = layout
+        monthCollectionView.decelerationRate = .fast // 快速減速
+    }
     /// 設定日期 CollectionView Layout
     private func setupDaysCollectionViewLayout() {
         daysCollectionView.collectionViewLayout = dateLayout
@@ -106,10 +112,20 @@ extension CalendarView: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CalendarDaysCollectionViewCell.identifier, for: indexPath)
-        guard let daysCell = cell as? CalendarDaysCollectionViewCell else { return cell }
-        daysCell.dayLabel.text = "\(indexPath.item)"
-        return daysCell
+        switch collectionView {
+        case monthCollectionView:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CalendarMonthCollectionViewCell.identifier, for: indexPath)
+            guard let monthCell = cell as? CalendarMonthCollectionViewCell else { return cell }
+            monthCell.monthLabel.text = "2024 12 20"
+            return monthCell
+        case daysCollectionView:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CalendarDaysCollectionViewCell.identifier, for: indexPath)
+            guard let daysCell = cell as? CalendarDaysCollectionViewCell else { return cell }
+            daysCell.dayLabel.text = "\(indexPath.item)"
+            return daysCell
+        default:
+            return UICollectionViewCell()
+        }
     }
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let newH = dateLayout.itemSize.height * CGFloat(6 ?? 5)
