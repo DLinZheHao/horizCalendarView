@@ -54,7 +54,7 @@ class CalendarView: CustomXibView {
     @IBOutlet weak var monthCollectionView: UICollectionView!
     /// 日期容器
     @IBOutlet weak var daysCollectionView: UICollectionView!
-    
+    /// 日期容器高度
     @IBOutlet weak var daysCollectionViewH: NSLayoutConstraint!
     
     /// 日期 collectionView Layout
@@ -132,6 +132,18 @@ extension CalendarView: UICollectionViewDelegate, UICollectionViewDataSource {
         daysCollectionViewH.constant = CGFloat(newH)
     }
 }
+
+// MARK: - UICollectionViewDelegateFlowLayout
+extension CalendarView: UICollectionViewDelegateFlowLayout {
+    // 基於 monthCollectionView 一直有警告，做的處理
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let sectionInsets = (collectionViewLayout as? UICollectionViewFlowLayout)?.sectionInset ?? UIEdgeInsets.zero
+        let contentInsets = collectionView.contentInset
+        let availableWidth = collectionView.bounds.width - sectionInsets.left - sectionInsets.right - contentInsets.left - contentInsets.right
+        return CGSize(width: availableWidth, height: 48)
+    }
+}
+
 // MARK: - UIScrollViewDelegate
 extension CalendarView: UIScrollViewDelegate {
     //scrollView滾動時，就呼叫該方法（任何offset值改變都會呼叫該方法，滾動過程中，呼叫多次）
