@@ -21,8 +21,8 @@ class CustomXibView: UIView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-//        loadXib()
-//        setBasicValue()
+        loadXib()
+        setBasicValue()
     }
     
     func loadXib() {
@@ -73,22 +73,6 @@ class CalendarView: CustomXibView {
     
     var calendarViewModel = CalendarViewModel()
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        setBasicValue()
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        loadXib()
-        setBasicValue()
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        loadXib()
-        setBasicValue()
-    }
     /// 初始化設定
     override func setBasicValue() {
         calendarViewModel.calendarModel = CalendarDataSourceModel(year: calendarViewModel.calendar.component(.year, from: Date()),
